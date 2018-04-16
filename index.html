@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Atividade Refatoracao</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<style>
+
+	/* Modify */
+	.modal-tema .modal-header{
+		display: flex;
+		justify-content: center;
+		padding: 1rem;
+		position: relative;
+	}
+	.modal-tema .modal-dialog .close{
+		position: absolute;
+		right: 0;
+		margin: 5px 10px;
+		z-index: 9;
+	}
+	.modal-tema .modal-title{
+		font-size: 3rem;
+	}
+
+	.modal-tema .modal-body{
+		text-align: center;
+	}
+	.modal-tema .modal-body h1{
+		font-size: 1.8rem;
+		font-weight: bold;
+	}
+	.modal-tema .modal-body p{
+		font-size: 1.2em;
+	}
+
+	.modal-tema .modal-footer{
+		border: none;
+		justify-content: center;
+	}
+
+	.modal-tema .btn{
+		font-size: .8rem;
+		text-transform: uppercase;
+		margin: 2px;
+		cursor: pointer;
+	}
+
+	/* Style */
+	.modal-tema.modal-warning .modal-header{
+		background-color: #e67e22;
+	}
+	.modal-tema .modal-header .modal-title,
+	.modal-tema .modal-dialog .close{
+		color: #fff;
+	}
+
+	.modal-tema.modal-primary .modal-header{
+		background-color: #2980b9;
+	}
+
+	.modal-tema.modal-success .modal-header{
+		background-color: #27ae60;
+	}
+
+	.modal-tema.modal-danger .modal-header{
+		background-color: #c0392b;
+	}
+
+	.modal-tema.modal-warning{
+		color: #e67e22;
+	}
+
+	.modal-tema.modal-primary{
+		color: #2980b9;
+	}
+
+	.modal-tema.modal-success{
+		color: #27ae60;
+	}
+
+	.modal-tema.modal-danger{
+		color: #c0392b;
+	}
+	.modal-tema .modal-body p{
+		color: #888;
+	}
+
+	.modal-tema .btn{
+		background-color: transparent;
+	}
+
+	.modal-tema.modal-warning .btn-primary,
+	.modal-tema.modal-warning .btn-secondary{
+		border-color: #e67e22;
+		color: #e67e22;
+	}
+	.modal-tema.modal-warning .btn-primary:hover,
+	.modal-tema.modal-warning .btn-secondary:hover{
+		background-color: #e67e22;
+		color: #fff;
+	}
+
+	.modal-tema.modal-primary .btn-primary,
+	.modal-tema.modal-primary .btn-secondary{
+		border-color: #2980b9;
+		color: #2980b9;
+	}
+	.modal-tema.modal-primary .btn-primary:hover,
+	.modal-tema.modal-primary .btn-secondary:hover{
+		background-color: #2980b9;
+		color: #fff;
+	}
+
+	.modal-tema.modal-success .btn-primary,
+	.modal-tema.modal-success .btn-secondary{
+		border-color: #27ae60;
+		color: #27ae60;
+	}
+	.modal-tema.modal-success .btn-primary:hover,
+	.modal-tema.modal-success .btn-secondary:hover{
+		background-color: #27ae60;
+		color: #fff;
+	}
+
+	.modal-tema.modal-danger .btn-primary,
+	.modal-tema.modal-danger .btn-secondary{
+		border-color: #c0392b;
+		color: #c0392b;
+	}
+	.modal-tema.modal-danger .btn-primary:hover,
+	.modal-tema.modal-danger .btn-secondary:hover{
+		background-color: #c0392b;
+		color: #fff;
+	}
+
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<br><br>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#primary">
+			primary
+		</button>
+
+		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#warning">
+			warning
+		</button>
+
+		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#success">
+			success
+		</button>
+
+		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#danger">
+			danger
+		</button>
+
+	</div>
+
+	<!-- Modal -->
+	<div class="modal modal-tema modal-primary fade" id="primary" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-exclamation-circle"></i></h5>
+				</div>
+				<div class="modal-body">
+					<h1>Info!</h1>
+					<p>Text for info.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Back To My Work</button>
+					<button type="button" class="btn btn-primary">Back To Store Hours</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal modal-tema modal-warning fade" id="warning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-exclamation-triangle"></i></h5>
+				</div>
+				<div class="modal-body">
+					<h1>Alert!</h1>
+					<p>Text for alert.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Back To My Work</button>
+					<button type="button" class="btn btn-primary">Back To Store Hours</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal -->
+	<div class="modal modal-tema modal-success fade" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-check-circle"></i></h5>
+				</div>
+				<div class="modal-body">
+					<h1>Great!</h1>
+					<p>Your data has been successfully saved.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Back To My Work</button>
+					<button type="button" class="btn btn-primary">Back To Store Hours</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal modal-tema modal-danger fade" id="danger" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-times-circle"></i></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h1>Warning!</h1>
+					<p>Text for warning.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Back To My Work</button>
+					<button type="button" class="btn btn-primary">Back To Store Hours</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/tether.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+</body>
+</html>
